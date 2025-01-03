@@ -36,10 +36,13 @@
                         <a href="{{ route('guardians.show', $guardian->id) }}" class="btn btn-info btn-sm">View</a>
                         <a href="{{ route('guardians.edit', $guardian->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('guardians.destroy', $guardian->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Are you sure you want to delete this guardian?')">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                        </form>
+    @csrf
+    @method('DELETE')
+    <input type="hidden" name="student_id" value="{{ $guardian->student_id }}">
+    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+</form>
+
+
                     </td>
                 </tr>
             @endforeach

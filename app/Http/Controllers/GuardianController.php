@@ -68,18 +68,20 @@ public function edit($id)
     }
     
 
-    public function destroy($studentId, $guardianId)
+    public function destroy(Request $request, $guardianId)
     {
+        $studentId = $request->input('student_id');
         $guardian = Guardian::where('student_id', $studentId)
                              ->where('id', $guardianId)
                              ->first();
     
         if ($guardian) {
-            $guardian->delete(); 
+            $guardian->delete();
             return redirect()->route('guardians.index')->with('success', 'Guardian deleted successfully!');
         }
     
         return redirect()->route('guardians.index')->with('error', 'Guardian not found.');
     }
+    
     
 }

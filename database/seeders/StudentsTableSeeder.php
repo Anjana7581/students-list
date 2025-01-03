@@ -12,9 +12,9 @@ class StudentsTableSeeder extends Seeder
         DB::table('students')->insert([
             [
                 'name' => 'John Abraham ',
-                'class' => '10A',
-                'age' => 15,
-                'photo' => 'photos/C9EJLZhZQoIQdYQhHbTyk5ZvcymypYPHdXXjgCkn.jpg', 
+                'class' => '4A',
+                'age' => 9,
+                'photo' => 'photos/M3p4iaBo0g5hgfUhATL79DQC6ymWr6gaFp0039Ix.jpg', 
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
