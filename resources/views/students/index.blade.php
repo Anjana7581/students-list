@@ -6,7 +6,7 @@
     <a href="{{ route('students.create') }}" class="btn btn-primary mb-3">Add Student</a>
 
     @if(session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success" id="success-message">
             {{ session('success') }}
         </div>
     @endif
@@ -50,4 +50,13 @@
         </tbody>
     </table>
 </div>
+
+<script>
+    setTimeout(function() {
+        let alertBox = document.getElementById('success-message');
+        if (alertBox) {
+            alertBox.style.display = 'none';
+        }
+    }, 3000); // 3000 milliseconds = 3 seconds
+</script>
 @endsection
